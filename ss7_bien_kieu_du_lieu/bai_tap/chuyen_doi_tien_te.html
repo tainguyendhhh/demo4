@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi tiền</title>
+</head>
+<body>
+
+<label>Amount</label>
+<input id="amount" type="number" placeholder="nhập số tiền"><br>
+<label>From </label><br>
+<select id="from"><br>
+    <option>Vnd</option>
+    <option>Usd</option>
+</select><br>
+<label>To</label><br>
+<select id="to">
+    <option>Usd</option>
+    <option>Vnd</option>
+</select><br>
+<input type="button" value="doitien"
+       onclick="doitien()">
+<h3 id="result">kết quả: </h3>
+<script>
+    function doitien() {
+        let amount = document.getElementById("amount").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let ketqua;
+        if (from === "Vnd" && to === "Usd") {
+            ketqua = amount / 25;
+        } else if (from === "Usd" && to === "Vnd") {
+            ketqua = amount * 25;
+        } else {
+            ketqua = amount;
+        }
+        document.getElementById("result").innerHTML = "kết quả là: " + ketqua;
+    }
+</script>
+</body>
+</html>
